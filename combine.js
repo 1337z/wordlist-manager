@@ -3,6 +3,13 @@ var fs = require('fs');
 var inputDir = 'input';
 var exportDir = 'output';
 var exportName = 'export.txt';
+var args = process.argv.slice(2);
+
+if(typeof args[0] !== 'undefined')
+    exportName = args[0];
+
+console.log(args[0]);
+console.log(exportName);
 
 var exportPath = exportDir + '/' + exportName;
 
