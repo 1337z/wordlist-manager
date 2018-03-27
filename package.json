@@ -1,0 +1,25 @@
+{
+  "name": "wordlist-manager",
+  "version": "1.0.0",
+  "description": "Combine and clean wordlists",
+  "main": "manager.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarvinJWendt/wordlist-manager.git"
+  },
+  "keywords": [
+    "wordlist"
+  ],
+  "author": "MarvinJWendt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MarvinJWendt/wordlist-manager/issues"
+  },
+  "homepage": "https://github.com/MarvinJWendt/wordlist-manager#readme",
+  "dependencies": {
+    
+  }
+}
