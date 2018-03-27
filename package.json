@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/MarvinJWendt/wordlist-manager#readme",
   "dependencies": {
-    
+    "neek": "^1.0.2"
   }
 }
