@@ -3,13 +3,13 @@ var fs = require('fs');
 var inputDir = 'input';
 var exportDir = 'output';
 var exportName = 'export.txt';
+
+//Normalize arguments
 var args = process.argv.slice(2);
 
+//Check if a name was entered and set it to 'exportName'
 if(typeof args[0] !== 'undefined')
     exportName = args[0];
-
-console.log(args[0]);
-console.log(exportName);
 
 var exportPath = exportDir + '/' + exportName;
 
