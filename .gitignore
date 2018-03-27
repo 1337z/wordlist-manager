@@ -1,6 +1,9 @@
 # Prevents uploading of wordlists 
 *.txt
 
+#Temporary files
+*.tmp
+
 # Logs
 logs
 *.log

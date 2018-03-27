@@ -1,4 +1,5 @@
 var fs = require('fs');
+var neek = require('neek'); // Removing duplicate lines. More at: https://github.com/whitfin/neek
 
 var inputDir = 'input';
 var exportDir = 'output';
@@ -17,11 +18,13 @@ var exportPath = exportDir + '/' + exportName;
 fs.readdir(inputDir, (err, files) => {
     files.forEach(file => {
         var data = fs.readFileSync(inputDir + "/" + file).toString();
-        fs.appendFileSync(exportPath, "\n" + data);
+        fs.appendFileSync(exportPath + '.tmp', "\n" + data);
     });
 
+
+
     //Remove blank lines
-    var data = fs.readFileSync(exportPath).toString();
+    var data = fs.readFileSync(exportPath + '.tmp').toString();
     fs.writeFileSync(exportPath, data.replace(/^\s*[\r\n]/gm, "").replace("\r", "\n"));
 
 });
