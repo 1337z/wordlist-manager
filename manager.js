@@ -30,7 +30,6 @@ fs.readdir(inputDir, (err, files) => {
         //Remove temporary files
         fs.unlink(exportPath + '-combined.tmp', function(){});
         fs.unlink(exportPath + '-uniq.tmp', function(){});
-        //fs.unlink(exportPath + '.tmp', function(){});
 
     });
 
