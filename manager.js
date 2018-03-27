@@ -43,6 +43,12 @@ fs.readdir(inputDir, (err, files) => {
                     fs.appendFileSync(exportPath, line + "\n");
                 });
 
+                //Clear input dir
+                files.forEach(file => {
+                    if(!file.startsWith('.'))
+                        fs.unlinkSync(inputDir + "/" + file);
+                });
+
                 //Remove temporary files
                 fs.unlinkSync(exportPath + '-combined.tmp');
                 fs.unlinkSync(exportPath + '-uniq.tmp');
