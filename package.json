@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/MarvinJWendt/wordlist-manager#readme",
   "dependencies": {
-    "neek": "^1.0.2"
+    "neek": "^1.0.2",
+    "node-natural-sort": "^0.8.6"
   }
 }
