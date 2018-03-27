@@ -18,13 +18,20 @@ var exportPath = exportDir + '/' + exportName;
 fs.readdir(inputDir, (err, files) => {
     files.forEach(file => {
         var data = fs.readFileSync(inputDir + "/" + file).toString();
-        fs.appendFileSync(exportPath + '.tmp', "\n" + data);
+        fs.appendFileSync(exportPath + '-combined.tmp', "\n" + data);
     });
 
+    //Remove duplicates with
+    neek.unique(exportPath + '-combined.tmp', exportPath + '-uniq.tmp', function(){
+        //Remove blank lines
+        var data = fs.readFileSync(exportPath + '-uniq.tmp').toString();
+        fs.writeFileSync(exportPath, data.replace(/^\s*[\r\n]/gm, "").replace("\r", "\n"));
 
+        //Remove temporary files
+        fs.unlink(exportPath + '-combined.tmp', function(){});
+        fs.unlink(exportPath + '-uniq.tmp', function(){});
+        //fs.unlink(exportPath + '.tmp', function(){});
 
-    //Remove blank lines
-    var data = fs.readFileSync(exportPath + '.tmp').toString();
-    fs.writeFileSync(exportPath, data.replace(/^\s*[\r\n]/gm, "").replace("\r", "\n"));
+    });
 
 });
