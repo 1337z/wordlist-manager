@@ -5,8 +5,11 @@
     //Convert files first if not already done
     ./convert
 
-    //Make wordlist files
+    //Make wordlist files for all folders
     ./create
+
+    //Make wordlist file for a specific folder
+    ./create [name]
 
     //Remove wordlist files
     ./remove
