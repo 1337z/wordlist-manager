@@ -9,7 +9,7 @@
 
 ---
 
-Simply put all your files you want to combine into the `input` folder.
+Simply put all the files you want to combine into the `input` folder.
 
 When you execute the command above all the files in `input` will  be combined, sorted and cleaned.
 
