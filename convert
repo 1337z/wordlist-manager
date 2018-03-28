@@ -1,3 +1,5 @@
+#!/bin/bash
+
 for i in */* ; do 
   [[ -f "$i" ]] || continue
   echo "Converting: $i"
