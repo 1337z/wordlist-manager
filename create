@@ -2,7 +2,7 @@
 
 echo "If you are not sure if your files are in the correct format:"
 echo "use ./convert first!"
-sleep 3
+sleep 5
 if [ "$1" != "" ]; then
     echo "Processing: ${1}"
     path="$( cd "$(dirname "$0")" ; pwd -P )"
