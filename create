@@ -1,0 +1,34 @@
+./convert && echo "CONVERTED"
+sleep 3
+if [ "$1" != "" ]; then
+    echo "Processing: ${1}"
+    path="$( cd "$(dirname "$0")" ; pwd -P )"
+    echo "    Changing working path to: ${path}/${1}"
+    cd "${path}/${1}"
+    echo "    Combining the files"
+    cat * > combined.tmp
+    echo "    Sorting the output"
+    tr -d "\r" < combined.tmp | sort -u > wordlist.lst
+    echo "    Removing temporary file"
+    rm combined.tmp
+    cd ..
+    echo "    SUCCESS"
+else
+    echo "No argument given. Everything will be processed.."
+    for D in *; do
+      if [ -d "${D}" ]; then
+          echo "Processing: ${D}"
+          path="$( cd "$(dirname "$0")" ; pwd -P )"
+          echo "    Changing working path to: ${path}/${D}"
+          cd "${path}/${D}"
+          echo "    Combining the files"
+          cat * > combined.tmp
+          echo "    Sorting the output"
+          tr -d "\r" < combined.tmp | sort -u > wordlist.lst
+          echo "    Removing temporary file"
+          rm combined.tmp
+          cd ..
+          echo "    SUCCESS"
+      fi
+    done
+fi

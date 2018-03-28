@@ -1,0 +1,5 @@
+for i in */* ; do 
+  [[ -f "$i" ]] || continue
+  echo "Converting: $i"
+  ed -s "$i" <<< w
+done
