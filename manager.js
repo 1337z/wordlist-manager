@@ -39,9 +39,13 @@ fs.readdir(inputDir, (err, files) => {
                 lines = lines.sort(naturalSort({
                     caseSensitive: false
                 }));
+
+                var txt = "";
                 lines.forEach(line => {
-                    fs.appendFileSync(exportPath, line + "\n");
+                    txt = txt + line + "\n";
                 });
+
+                fs.writeFileSync(exportPath, txt);
 
                 //Clear input dir
                 files.forEach(file => {
