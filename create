@@ -27,7 +27,7 @@ else
           echo "    Combining the files"
           cat * > combined.tmp
           echo "    Sorting the output"
-          tr -d "\r" < combined.tmp | sort -u > wordlist.lst
+          tr -d "\r" < combined.tmp | sort -u > $D.lst
           echo "    Removing temporary file"
           rm combined.tmp
           cd ..
